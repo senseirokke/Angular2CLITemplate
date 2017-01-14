@@ -1,0 +1,47 @@
+{
+    "version": "0.1.0",
+    "configurations": [
+        {
+            "name": "Launch with sourcemaps",
+            "type": "chrome",
+            "request": "launch",
+            "sourceMaps": true,
+            "url": "http://localhost:4200/",
+            "webRoot": "${workspaceRoot}",
+            "runtimeArgs": [
+                "--disable-session-crashed-bubble",
+                "--disable-infobars",
+                "--disable-application-cache",
+                "--media-cache-size=1",
+                "--disk-cache-size=1"
+            ],
+            "diagnosticLogging": true,
+            "sourceMapPathOverrides": {
+                "webpack:///./*": "${webRoot}/*"
+            },
+            "skipFiles": [
+                "zone.js",
+                "vendor.bundle.js",
+                "node_modules/**/*.js",
+                "lib/**/*.js"
+            ]
+        },
+        {
+            "name": "Attach with sourcemaps",
+            "type": "chrome",
+            "request": "attach",
+            "sourceMaps": true,
+            "url": "http://localhost:4200/",
+            "port": 9222,
+            "webRoot": "${workspaceRoot}",
+            "diagnosticLogging": true,
+            "sourceMapPathOverrides": {
+                "webpack:///./*": "${webRoot}/*"
+            },
+            "skipFiles": [
+                "node_modules/**/*.js",
+                "lib/**/*.js"
+            ]
+        }
+    ]
+}
